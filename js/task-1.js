@@ -1,26 +1,48 @@
 'use strict';
-function isEnoughCapacity(products, containerSize) {
-  let total = 0;
 
-  const keys = Object.keys(products);
+const getUserNames = (users) => users.map((user) => user.name);
 
-  for (const key of keys) {
-    total += products[key];
-  }
-  if (total <= containerSize) {
-    return true;
-  } else {
-    return false;
-  }
-}
+console.log(
+  getUserNames([
+    {
+      name: 'Moore Hensley',
+      email: 'moorehensley@indexia.com',
+      balance: 2811,
+    },
+    {
+      name: 'Sharlene Bush',
+      email: 'sharlenebush@tubesys.com',
+      balance: 3821,
+    },
+    {
+      name: 'Ross Vazquez',
+      email: 'rossvazquez@xinware.com',
+      balance: 3793,
+    },
+    {
+      name: 'Elma Head',
+      email: 'elmahead@omatom.com',
+      balance: 2278,
+    },
+    {
+      name: 'Carey Barr',
+      email: 'careybarr@nurali.com',
+      balance: 3951,
+    },
+    {
+      name: 'Blackburn Dotson',
+      email: 'blackburndotson@furnigeer.com',
+      balance: 1498,
+    },
+    {
+      name: 'Sheree Anthony',
+      email: 'shereeanthony@kog.com',
+      balance: 2764,
+    },
+  ]),
+);
 
-console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
-
-console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
-
-console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)); // true
-
-console.log(isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)); // false
+// ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
 /*Залиш цей код для перевірки ментором.
 
@@ -28,10 +50,9 @@ console.log(isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)); // fal
 
 Вимоги
 
-Оголошено функцію isEnoughCapacity(products, containerSize).
-Виклик isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8) повертає true.
-Виклик isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12) повертає false.
-Виклик isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14) повертає true.
-Виклик isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7) повертає false.
+Оголошено змінну getUserNames.
+Змінній getUserNames присвоєно стрілочну функцію з параметром (users).
+Для перебирання параметра users використано метод map().
+Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"].
 Виклик з будь-якими валідними аргументами повертає правильне значення.
 Результати всіх викликів виведено в консоль.*/
